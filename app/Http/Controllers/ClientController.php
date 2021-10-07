@@ -25,6 +25,7 @@ class ClientController extends Controller
      */
     public function create()
     {
+        // grazina vaizda i client.create vaizda- forma sukurimui
         return view ("client.create");
     }
 
@@ -34,6 +35,8 @@ class ClientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    // atsakinga uz visu duomenu patalpinuma
     public function store(Request $request)
     {
         $client=new Client;
@@ -58,6 +61,11 @@ class ClientController extends Controller
      */
     public function show(Client $client)
     {
+        // per vaizda perduodam visa informacija apie klienta, pagal ID
+        // kaip clientShow.php?ID=$clientID
+        // tekstas tarp kabuciu nurodo kintamojo pavadinimas, kuriuo kreipiamasi blade dokumente
+        // "client" gali buti ir kitoks zodis- bet jis turi buti toks pats ir blade dokumentuose
+        // $client- yra visa informacija apie klienta
         return view ("client.show", ["client"=>$client]);
     }
 

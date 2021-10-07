@@ -19,13 +19,13 @@ Route::get('/', function () {
 
 Route::prefix('clients')->group(function () {
 
-    Route::get('','App\Http\Controllers\ClientController@index')->name('client.index');
-    Route::get('create','App\Http\Controllers\ClientController@create')->name('client.create');
-    Route::post('store','App\Http\Controllers\ClientController@store')->name('client.store');
-    Route::get('edit/{client}', 'App\Http\Controllers\ClientController@edit')->name('client.edit');
-    Route::post('update/{client}','App\Http\Controllers\ClientController@update')->name('client.update');
-    Route::post('delete/{client}','App\Http\Controllers\ClientController@destroy')->name('client.destroy');
-    Route::get('show/{client}','App\Http\Controllers\ClientController@show')->name('client.show');
+    Route::get('','App\Http\Controllers\ClientController@index')->name('client.index')->middleware("auth");
+    Route::get('create','App\Http\Controllers\ClientController@create')->name('client.create')->middleware("auth");
+    Route::post('store','App\Http\Controllers\ClientController@store')->name('client.store')->middleware("auth");
+    Route::get('edit/{client}', 'App\Http\Controllers\ClientController@edit')->name('client.edit')->middleware("auth");
+    Route::post('update/{client}','App\Http\Controllers\ClientController@update')->name('client.update')->middleware("auth");
+    Route::post('delete/{client}','App\Http\Controllers\ClientController@destroy')->name('client.destroy')->middleware("auth");
+    Route::get('show/{client}','App\Http\Controllers\ClientController@show')->name('client.show')->middleware("auth");
 
 });
 
@@ -41,3 +41,11 @@ Route::prefix('companies')->group(function () {
 
 });
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
