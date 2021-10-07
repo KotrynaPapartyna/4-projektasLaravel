@@ -25,9 +25,9 @@ class ClientFactory extends Factory
         return [
             'name'=>$this->faker->name,
             'surname'=>$this->faker->sentence(4),
-            'username'=>Str::random(15),
-            'company_id'=>Str::random(15),
-            'image_url'=>Str::random(15),
+            'username'=>Str::random(20),
+            'company_id'=>Str::random(20),
+            'image_url'=>Str::random(50),
          ];
     }
 }

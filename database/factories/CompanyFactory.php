@@ -25,7 +25,7 @@ class CompanyFactory extends Factory
         return [
                 'name'=>$this->faker->name,
                 'type'=>$this->faker->sentence(4),
-                'description'=>Str::random(50),
+                'description'=>Str::random(100),
              ];
 
     }
