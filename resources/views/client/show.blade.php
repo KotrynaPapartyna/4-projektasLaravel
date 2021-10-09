@@ -9,6 +9,6 @@
 <p>{{$client->surname}}</p>
 <p>{{$client->username}}</p>
 <p>{{$client->company_id}}</p>
-<p>{{$client->imgage_url}}</p>
+<p>{{$client->image_url}}</p>
 
 
